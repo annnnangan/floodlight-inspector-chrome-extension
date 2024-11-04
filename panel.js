@@ -1,5 +1,5 @@
 const result = document.querySelector(".result");
-const accordion = document.querySelector(".accordion");
+const accordionFloodlight = document.querySelector("#accordion-floodlight");
 result.innerHTML = "";
 
 const uid = function () {
@@ -14,11 +14,14 @@ chrome.devtools.network.onRequestFinished.addListener(function (request) {
     request.response.status == 200
   ) {
     const requestURL = request.request.url;
-    const src = requestURL.split(";")[1];
-    const type = requestURL.split(";")[2];
-    const cat = requestURL.split(";")[3];
+    const floodlight = {
+      src: requestURL.split(";")[1],
+      type: requestURL.split(";")[2],
+      cat: requestURL.split(";")[3],
+    };
     let identifier = uid();
-    accordion.innerHTML += `<div class="accordion-item">
+    const requestURAccordion = fullRequestURL(requestURL);
+    accordionFloodlight.innerHTML += `<div class="accordion-item">
         <h2 class="accordion-header">
           <button
             class="accordion-button"
@@ -28,28 +31,38 @@ chrome.devtools.network.onRequestFinished.addListener(function (request) {
             aria-expanded="true"
             aria-controls="collapse-${identifier}"
           >
-            [Floodlight]
-            <span class="badge text-bg-primary me-2">${src}</span>
-            <span class="badge text-bg-success me-2">${type}</span>
-            <span class="badge text-bg-info">${cat}</span>
+            <span class="text-bold">Floodlight</span>
+            <span class="badge text-bg-primary mx-2">${floodlight.src}</span>
+            <span class="badge text-bg-success me-2">${floodlight.type}</span>
+            <span class="badge text-bg-info">${floodlight.cat}</span>
           </button>
         </h2>
         <div
           id="collapse-${identifier}"
           class="accordion-collapse collapse"
-          data-bs-parent="#accordionExample"
+          data-bs-parent="#accordion-floodlight"
         >
           <div class="accordion-body">
-            <strong>This is the first item's accordion body.</strong> It is
-            shown by default, until the collapse plugin adds the appropriate
-            classes that we use to style each element. These classes control the
-            overall appearance, as well as the showing and hiding via CSS
-            transitions. You can modify any of this with custom CSS or
-            overriding our default variables. It's also worth noting that just
-            about any HTML can go within the <code>.accordion-body</code>,
-            though the transition does limit overflow.
+            ${requestURAccordion}
           </div>
         </div>
       </div>`;
   }
 });
+
+function fullRequestURL(requestURL) {
+  return `<div class="accordion" id="accordion-full-request-url">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Full Request URL
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordion-full-request-url">
+      <div class="accordion-body text-break">
+        ${requestURL}
+      </div>
+    </div>
+  </div>
+</div>`;
+}
