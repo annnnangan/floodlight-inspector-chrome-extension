@@ -48,6 +48,23 @@ chrome.devtools.network.onRequestFinished.addListener(function (request) {
   }
 });
 
+function fullRequestURL(requestURL) {
+  return `<div class="accordion" id="accordion-full-request-url">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Full Request URL
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordion-full-request-url">
+      <div class="accordion-body text-break">
+        ${requestURL}
+      </div>
+    </div>
+  </div>
+</div>`;
+}
+
 function renderFloodlightInfo(floodlight, requestURL) {
   const customFloodlightVariable = renderCustomFloodlightVariable(requestURL);
   return ` <div class="accordion mb-4" id="accordion-floodlight-details">
@@ -110,22 +127,4 @@ function renderCustomFloodlightVariable(requestURL) {
   }
 
   return cfvLayout;
-}
-
-//show full request url to the screen
-function fullRequestURL(requestURL) {
-  return `<div class="accordion" id="accordion-full-request-url">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Full Request URL
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordion-full-request-url">
-      <div class="accordion-body text-break">
-        ${requestURL}
-      </div>
-    </div>
-  </div>
-</div>`;
 }

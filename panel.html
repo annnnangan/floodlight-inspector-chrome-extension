@@ -9,102 +9,27 @@
   </head>
 
   <body>
-    <div class="accordion" id="accordion-floodlight">
-      <!--   <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapse-${identifier}"
-            aria-expanded="true"
-            aria-controls="collapse-${identifier}"
-          >
-            <span class="text-bold">Floodlight</span>
-            <span class="badge text-bg-primary mx-2">${floodlight.src}</span>
-            <span class="badge text-bg-success me-2">${floodlight.type}</span>
-            <span class="badge text-bg-info">${floodlight.cat}</span>
-          </button>
-        </h2>
-        <div
-          id="collapse-${identifier}"
-          class="accordion-collapse collapse show"
-          data-bs-parent="#accordion-floodlight"
-        >
-          <div class="accordion-body">
-
-            <div class="accordion mb-4" id="accordion-floodlight-details">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    Event Data
-                  </button>
-                </h2>
-                <div
-                  id="collapseOne"
-                  class="accordion-collapse collapse show"
-                  data-bs-parent="#accordion-full-request-url"
-                >
-                  <div class="accordion-body">
-                    <ul>
-                      <li class="row">
-                        <p class="col-6">Advertiser ID(src)</p>
-                        <p class="col-6">gener0</p>
-                      </li>
-                      <li class="row">
-                        <p class="col-6">Activity Type String(cat)</p>
-                        <p class="col-6">gener0</p>
-                      </li>
-                      <li class="row">
-                        <p class="col-6">Group Tag String(type)</p>
-                        <p class="col-6">gener0</p>
-                      </li>
-                      <li class="row">
-                        <p class="col-6">Counting</p>
-                        <p class="col-6">gener0</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion" id="accordion-full-request-url">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    Full Request URL
-                  </button>
-                </h2>
-                <div
-                  id="collapseOne"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#accordion-full-request-url"
-                >
-                  <div class="accordion-body text-break">
-                    https://9811262.fls.doubleclick.net/activityi;src=9811262;type=gener0;cat=gener0;ord=5839327051755;npa=0;auiddc=1624618298.1730531660;u1=en;u11=https%3A%2F%2Ffivestones.net%2F;gdid=dMWZhNz;ps=1;pcor=1411101188;uaa=;uab=64;uafvl=Chromium%3B130.0.6723.59%7CGoogle%2520Chrome%3B130.0.6723.59%7CNot%253FA_Brand%3B99.0.0.0;uamb=1;uam=Nexus%205;uap=Android;uapv=6.0;uaw=0;frm=0;gtm=45fe4au0v9182868030z8812964584za201zb812964584;gcs=G111;gcd=13r3r3r3r5l1;dma=0;tag_exp=101823848~101878899~101878944~101925629;epver=2;~oref=https%3A%2F%2Ffivestones.net%2F?
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </div -->
+    <header class="bg-primary"><h1 class="px-3 py-2 fs-5 text-white text-center">Floodlight Inspector</h1></header>
+    <div class="container mt-4">
+      <div class="d-flex flex-wrap mb-4">
+        <button class="btn btn-action btn-outline-primary d-flex align-items-center me-2 mb-2 reload-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-arrow-clockwise me-2 btn-icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+          </svg>
+          <p class="m-0">Reload</p>
+        </button>
+        <button class="btn btn-action btn-outline-primary d-flex align-items-center clear-btn mb-2 clear-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-trash3-fill btn-icon me-2" viewBox="0 0 16 16">
+            <path
+              d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5" />
+          </svg>
+          <p class="m-0">Clear</p>
+        </button>
+      </div>
     </div>
+
+    <main class="floodlight-list container"></main>
 
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="panel.js"></script>
