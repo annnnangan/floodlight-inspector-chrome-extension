@@ -5,10 +5,13 @@
   "description": "The Floodlight Inspector Chrome extension is a powerful tool designed to help you easily validate and troubleshoot your Floodlight setup in Google tag format. It deconstructs the Floodlight request URLs to make it easier for you to identify and verify the data. This tool decodes the custom Floodlight variables so they’re understandable when your captured language isn't in English.",
   "devtools_page": "devtools.html",
   "permissions": ["tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  },
   "icons": {
-    "16": "icon16.png",
-    "32": "icon32.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   }
 }
