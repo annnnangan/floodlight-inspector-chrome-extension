@@ -6,10 +6,13 @@
 
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./panel.css" />
   </head>
 
   <body>
+    <!-- Header -->
     <header class="bg-primary"><h1 class="px-3 py-2 fs-5 text-white text-center">Floodlight Inspector</h1></header>
+    <!-- Control Panel -->
     <div class="container mt-4">
       <div class="d-flex flex-wrap mb-4">
         <button class="btn btn-action btn-outline-primary d-flex align-items-center me-2 mb-2 reload-btn">
@@ -29,9 +32,10 @@
       </div>
     </div>
 
-    <main class="floodlight-list container"></main>
+    <!-- Main -->
+    <main class="container floodlight-list"></main>
 
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="panel.js"></script>
+    <script src="./panel.js"></script>
   </body>
 </html>

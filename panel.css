@@ -1,0 +1,20 @@
+p {
+  word-break: break-all;
+}
+
+.accordion-event-data .accordion-button:not(.collapsed),
+.accordion-full-request-url .accordion-button:not(.collapsed) {
+  background-color: #ffffff;
+}
+
+ul {
+  padding: 0;
+}
+svg.btn-icon {
+  fill: #0d6efd;
+  transition: color 0.5s;
+}
+.btn-action:hover svg.btn-icon {
+  fill: white !important;
+  transition: color 0.5s;
+}
