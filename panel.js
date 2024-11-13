@@ -1,4 +1,6 @@
 const floodlightContainer = document.querySelector(".floodlight-list");
+const clearBtn = document.querySelector(".clear-btn");
+const reloadBtn = document.querySelector(".reload-btn");
 
 chrome.devtools.network.onRequestFinished.addListener(function (request) {
   // Check if the URL includes "fls.doubleclick"
@@ -48,10 +50,27 @@ chrome.devtools.network.onRequestFinished.addListener(function (request) {
   }
 });
 
+clearBtn.addEventListener("click", (e) => {
+  floodlightContainer.innerHTML = "";
+});
+
+reloadBtn.addEventListener("click", (e) => {
+  chrome.tabs.query({ status: "complete", active: true }, (tabs) => {
+    tabs.forEach((tab) => {
+      if (tab.url) {
+        chrome.tabs.update(tab.id, { url: tab.url });
+      }
+    });
+  });
+  floodlightContainer.innerHTML = "";
+});
+
+//Generate Unique Identifier for accordion
 function generateUID() {
   return Date.now().toString(36) + Math.random().toString(36).substring(2);
 }
 
+//Break down the Floodlight request URL into an object
 function generateFloodlightInfoList(requestURL) {
   const requestURLParamArray = requestURL.split(";");
   let floodlightDetails = {};
@@ -85,6 +104,7 @@ function defineCountingMethod(floodlightInfoList) {
   }
 }
 
+//Render the event data accordion
 function renderEventDataAccordion(floodlightInfoList, identifier) {
   const customFloodlightVariableLayout = renderCustomFloodlightVariable(floodlightInfoList);
   return `<div class="accordion mb-4 accordion-event-data" id="accordionEventData-${identifier}">
@@ -113,12 +133,12 @@ function renderEventDataAccordion(floodlightInfoList, identifier) {
                               <p class="col-6">${floodlightInfoList.src}</p>
                             </li>
                             <li class="row">
-                              <p class="col-6">Activity Type String(cat)</p>
-                              <p class="col-6">${floodlightInfoList.cat}</p>
-                            </li>
-                            <li class="row">
                               <p class="col-6">Group Tag String(type)</p>
                               <p class="col-6">${floodlightInfoList.type}</p>
+                            </li>
+                            <li class="row">
+                              <p class="col-6">Activity Type String(cat)</p>
+                              <p class="col-6">${floodlightInfoList.cat}</p>
                             </li>
                           </ul>
                         </div>
@@ -179,6 +199,7 @@ function renderCustomFloodlightVariable(floodlightInfoList) {
   return finalCFVLayout;
 }
 
+//Render the full request url accordion
 function renderFullRequestURLAccordion(requestURL, identifier) {
   return `                <div class="accordion accordion-full-request-url" id="accordionFullRequestURL-${identifier}">
                   <div class="accordion-item">

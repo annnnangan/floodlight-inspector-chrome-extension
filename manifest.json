@@ -3,5 +3,6 @@
   "name": "Floodlight Inspector",
   "version": "1.0.0",
   "description": "An easy way to health check your Floodlight tag",
-  "devtools_page": "devtools.html"
+  "devtools_page": "devtools.html",
+  "permissions": ["tabs"]
 }
