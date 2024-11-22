@@ -65,4 +65,20 @@ I have recently created a Chrome Extension to help with Floodlight audit. The to
 10. The new triggered Floodlight tag will appear below the existing one
     ![image.png](https://firebasestorage.googleapis.com/v0/b/testing-c9537.appspot.com/o/Floodlight-inspector%2Ffloodlight-inspector-10.png?alt=media&token=f97eab0f-597e-4750-8a3b-7ce08a24585d)
         
- 
+
+## Privacy Policy for My Google Chrome Extensions  
+**Effective Date:** 23rd Nov, 2024
+
+### Data Collection and Use  
+My Google Chrome Extensions do not collect, store, or transmit any personal information from users. No data that can personally identify you—such as your name, email address, or location—is gathered or shared.  
+
+Since no data is collected, your information is not sold, shared, or otherwise disclosed to third parties.  
+
+### Third-Party Websites  
+My Google Chrome Extensions may include links to external websites or services that are not operated by me. Please note that this Privacy Policy does not apply to those third-party websites or services. I encourage you to review the privacy policies of any external sites you visit to understand how they handle personal information.  
+
+### Changes to This Privacy Policy  
+I reserve the right to update this Privacy Policy at any time. Changes will take effect immediately upon being posted here, with the "Effective Date" updated accordingly. I encourage you to check this page periodically to stay informed about how your privacy is protected.  
+
+### Consent  
+By using my Google Chrome Extensions, you consent to this Privacy Policy. If you do not agree to its terms, please discontinue using the extensions.  
