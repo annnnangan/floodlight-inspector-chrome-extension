@@ -1,9 +1,13 @@
 # Floodlight Inspector Chrome Extension
 
-> [!NOTE]
-> The **Floodlight Inspector** Chrome extension is a powerful tool designed to help you easily validate and troubleshoot your Floodlight setup in Google tag format . 
+<a href="https://chromewebstore.google.com/detail/floodlight-inspector/klidijcbfmpkdnegfcfkcdjfkimggbed?authuser=1&hl=en" target="_blank">Add Chrome Extension</a>
 
-I have recently created a Chrome Extension to help with Floodlight audit. The tool has just uploaded for approval. You may use the <a href="https://annnnangan.github.io/demo-page-for-floodlight-inspector-chrome-extension/" target="_blank">demo page</a> to have a try on the Floodlight Inspector chrome extension later. The below guideline is based on this demo page too. 
+![image.png](https://firebasestorage.googleapis.com/v0/b/testing-c9537.appspot.com/o/Floodlight-inspector%2FMarquee%20promo%20tile.png?alt=media&token=ad89d971-d25b-4783-abf4-d9e6457c264e)
+
+
+The **Floodlight Inspector** Chrome extension is a powerful tool designed to help you easily validate and troubleshoot your Floodlight setup in Google tag format. 
+
+You may use the <a href="https://annnnangan.github.io/demo-page-for-floodlight-inspector-chrome-extension/" target="_blank">demo page</a> to have a try on the Floodlight Inspector chrome extension later. The below guideline is based on this demo page too. 
 
 
 ## Key Features
